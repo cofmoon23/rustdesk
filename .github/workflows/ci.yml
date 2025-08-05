@@ -13,16 +13,16 @@ on:
     paths-ignore:
       - "docs/**"
       - "README.md"
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/**"
-      - "docs/**"
-      - "README.md"
-      - "res/**"
-      - "appimage/**"
-      - "flatpak/**"
+  # push:
+  #   branches:
+  #     - master
+  #   paths-ignore:
+  #     - ".github/**"
+  #     - "docs/**"
+  #     - "README.md"
+  #     - "res/**"
+  #     - "appimage/**"
+  #     - "flatpak/**"
 
 jobs:
   # ensure_cargo_fmt:
@@ -95,6 +95,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         submodules: recursive
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
     - name: Install prerequisites
       shell: bash
